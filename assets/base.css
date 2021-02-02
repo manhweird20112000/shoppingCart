@@ -81,14 +81,16 @@
 
 .wrapper-product {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .product-wrapper-item {
     max-width: 180px;
-    padding: 15px;
+    min-height: 262px;
+    max-height: 270px;
+    padding: 15px 15px 15px 15px;
     border-radius: 10px;
     background-color: rgb(255, 255, 255, 0.4);
     margin: 5px;

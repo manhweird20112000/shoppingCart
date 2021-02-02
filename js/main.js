@@ -1,4 +1,4 @@
-const song = [{
+const songs = [{
         id: 1,
         name: "Chương 2 Của Tương Lai",
         image: "./images/chuong-2-cua-tuong-lai.jpeg",
@@ -55,3 +55,5 @@ const song = [{
         country: "Viet Nam"
     },
 ]
+
+let cart = [];
