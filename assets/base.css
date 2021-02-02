@@ -71,9 +71,9 @@
 }
 
 .btn--search {
-    padding: 8px 30px;
-    background-color: greenyellow;
-    border-radius: 5px;
+    padding: 8px 20px;
+    background-color: #67d861;
+    border-radius: 20px;
     font-size: 1.8em;
     color: white;
     font-weight: 600;
