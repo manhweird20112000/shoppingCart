@@ -12,15 +12,108 @@
     align-items: center;
 }
 
-.cart .cart__icon img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+.cart {
+    margin: 10px 0 0 0;
+}
+
+.cart .cart__icon span {
+    color: white;
+    font-size: 4em;
 }
 
 .cart {
     position: relative;
     cursor: pointer;
+}
+
+.wrapper-add-product__heading {
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.wrapper-add-product {
+    position: absolute;
+    width: 400px;
+    background-color: white;
+    min-height: 300px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    z-index: 999;
+}
+
+.cart:hover .wrapper-add-product {
+    display: block;
+}
+
+.wrapper-add-product::after {
+    content: " ";
+    position: absolute;
+    border-width: 20px;
+    border-color: transparent transparent white transparent;
+    border-style: solid;
+    top: -30px;
+    left: -1px;
+}
+
+.wrapper-add-product::before {
+    content: " ";
+    position: absolute;
+    border-width: 20px;
+    border-style: solid;
+    top: -30px;
+    left: -1px;
+    border-color: transparent;
+}
+
+.new-product-add__item {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+    border-radius: 10px;
+    margin: 5px 0 5px 0;
+}
+
+.new-product-add__item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.new-product-add__item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.new-product-add__desc {}
+
+.new-product-add__desc .new-product-add__title {
+    font-size: 1.8em;
+    margin-bottom: 1px;
+    font-weight: 600;
+}
+
+.new-product-add__desc .new-product-add__artist {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.cart-empty {
+    text-align: center;
+}
+
+.cart-empty img {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.cart-empty p {
+    font-size: 2em;
 }
 
 .cart .cart__count-product {
@@ -32,8 +125,9 @@
     border-radius: 50%;
     color: white;
     position: absolute;
-    bottom: 1px;
-    right: 0;
+    top: 0;
+    right: -5px;
+    display: none;
 }
 
 .cart .cart__count-product span {
@@ -79,7 +173,7 @@
     font-weight: 600;
 }
 
-.wrapper-product {
+#wrapper-product {
     display: flex;
     align-items: center;
     margin-top: 20px;
@@ -89,7 +183,6 @@
 .product-wrapper-item {
     max-width: 180px;
     min-height: 262px;
-    max-height: 270px;
     padding: 15px 15px 15px 15px;
     border-radius: 10px;
     background-color: rgb(255, 255, 255, 0.4);
@@ -125,7 +218,7 @@
 }
 
 .product-wrapper-item .product__desc .product__artist {
-    font-size: 1.6em;
+    font-size: 1.3em;
     font-weight: 500;
     color: #f0f0f0;
 }

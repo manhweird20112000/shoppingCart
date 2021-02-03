@@ -54,6 +54,88 @@ const songs = [{
         artist: "MCK, Wxrdie, Sony Tran",
         country: "Viet Nam"
     },
-]
+];
 
 let cart = [];
+
+start();
+
+function start() {
+    renderListSong();
+    countProductInCart();
+}
+
+function renderListSong() {
+    let htmls = songs.map((song) => {
+        return `<div class="product-wrapper-item">
+        <div class="product__img">
+        <img src=${song.image} alt="">
+        </div>
+        <div class="product__desc">
+        <p class="product__name">
+        ${song.name}
+        </p>
+        <a class="product__artist">
+        ${song.artist}
+        </a>
+        </div>
+        <div class="add-product">
+        <span class="fi-rr-plus-small"></span>
+        </div>
+        </div>
+        `;
+    })
+    let listSong = document.getElementById('wrapper-product');
+    listSong.innerHTML = htmls.join('');
+}
+
+let addProduct = document.querySelectorAll('.add-product');
+
+addProduct.forEach((btn, index) => {
+    let indexSongs = songs[index];
+    btn.addEventListener('click', function() {
+        cart.push(indexSongs);
+        countProductInCart();
+    })
+
+})
+
+function countProductInCart() {
+    let countCart = document.querySelector('.cart__count-product');
+    let count = document.querySelector('.cart__count-product span');
+    let notification = document.querySelector('.wrapper-add-product');
+    if (cart.length == 0) {
+        countCart.style.display = 'none';
+        notification.innerHTML = `
+        <div class="cart-empty">
+        <img src="./images/coal.png" alt="" srcset="">
+        <p> Cart Empty !</p>
+        </div>
+        `;
+
+    } else {
+        count.innerHTML = cart.length;
+        countCart.style.display = 'block';
+        let htmls = cart.map((item) => {
+            return `
+        <div class="new-product-add">
+            <div class="new-product-add__item">
+
+                <img src="${item.image}" alt="" srcset="">
+
+                <div class="new-product-add__desc">
+                    <p class="new-product-add__title">
+                       ${item.name}
+                    </p>
+                    <p class="new-product-add__artist">
+                        ${item.artist}
+                    </p>
+                </div>
+            </div>
+        </div>
+            `;
+
+        })
+        notification.innerHTML = htmls.join(' ');
+    }
+}
